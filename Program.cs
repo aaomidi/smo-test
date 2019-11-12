@@ -1,6 +1,6 @@
 ﻿using System;
-//using SqlClient = Microsoft.Data.SqlClient;
-using SqlClient = System.Data.SqlClient;
+using SqlClient = Microsoft.Data.SqlClient;
+// using SqlClient = System.Data.SqlClient;
 using Smo = Microsoft.SqlServer.Management.Smo;
 using Common = Microsoft.SqlServer.Management.Common;
 
