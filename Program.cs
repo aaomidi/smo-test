@@ -1,6 +1,6 @@
 ﻿using System;
-//using SqlClient = Microsoft.Data.SqlClient;
-using SqlClient = System.Data.SqlClient;
+using SqlClient = Microsoft.Data.SqlClient;
+//using SqlClient = System.Data.SqlClient;
 using Smo = Microsoft.SqlServer.Management.Smo;
 using Common = Microsoft.SqlServer.Management.Common;
 
@@ -20,10 +20,16 @@ namespace SmoTestPackage
             Console.WriteLine(db.ToString());
             var results = db.ExecuteWithResults("SELECT * FROM sys.tables");
             DoQuery(db);
-            Console.WriteLine("Disconnect from your internet and then connect again...");
-            Console.ReadKey(true);
-            DoQuery(db);
-            Console.ReadKey(true);
+            while(true)
+            {
+                Console.WriteLine("Want to try again?");
+                var key = Console.ReadKey(true);
+                if (key.KeyChar.Equals('n'))
+                {
+                    break;
+                }
+                DoQuery(db);
+            }
         }
 
         static void DoQuery(Smo.Database db)

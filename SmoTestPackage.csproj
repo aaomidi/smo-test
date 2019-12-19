@@ -7,7 +7,8 @@
 
   <ItemGroup>
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
-    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="160.1910315.0-preview" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.0" />
+    <PackageReference Include="Microsoft.SqlServer.SqlManagementObjects" Version="160.1911221.0-preview" />
   </ItemGroup>
 
 </Project>
