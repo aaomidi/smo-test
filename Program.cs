@@ -20,7 +20,7 @@ namespace SmoTestPackage
             Console.WriteLine(db.ToString());
             var results = db.ExecuteWithResults("SELECT * FROM sys.tables");
             DoQuery(db);
-            while(true)
+            while (true)
             {
                 Console.WriteLine("Want to try again?");
                 var key = Console.ReadKey(true);
@@ -28,7 +28,14 @@ namespace SmoTestPackage
                 {
                     break;
                 }
-                DoQuery(db);
+                try
+                {
+                    DoQuery(db);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
             }
         }
 
